@@ -5,7 +5,7 @@ const ListViewContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  
+
 `;
 
 const ListContainer = styled.div`
@@ -20,7 +20,6 @@ function ListView() {
         <h1>Filter</h1>
       </div>
       <ListContainer>
-
       </ListContainer>
     </ListViewContainer>
   );
