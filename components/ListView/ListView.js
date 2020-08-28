@@ -5,6 +5,7 @@ const ListViewContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  
 `;
 
 const ListContainer = styled.div`
