@@ -9,10 +9,12 @@ const MainContainer = styled.div`
   border: 1px red solid;
   box-sizing: border-box;
   height: 100vh;
+  align-items: center;
 `;
 
 const LeftSection = styled.div`
   flex: 1;
+  height: 100%;
   border: 1px red solid;
 `;
 
@@ -23,12 +25,14 @@ const RightSection = styled.div`
   border: 1px pink solid;
   display: flex;
   flex-direction: column;
+  height: 90%;
 `;
 
 const InnerContainer = styled.div`
   display: flex;
   border: 1px blue solid;
   flex: 1;
+  height: 90%;
 `;
 
 const ListViewContainer =  styled.div`
@@ -38,8 +42,12 @@ const ListViewContainer =  styled.div`
 `;
 
 const DetailsViewContainer =  styled.div`
+  border: 3px green solid;
   flex: 3;
-  border: 1px red solid;
+`;
+
+const SearchContainer = styled.div`
+  height: 10%;
 `;
 
 export default function Home() {
@@ -49,7 +57,9 @@ export default function Home() {
         <LeftBar />
       </LeftSection>
       <RightSection>
-        <Search />
+        <SearchContainer>
+          <Search />
+        </SearchContainer>
         <InnerContainer>
           <ListViewContainer>
             <ListView />
