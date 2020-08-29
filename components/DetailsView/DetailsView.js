@@ -9,7 +9,6 @@ const MainContainer = styled.div`
 
 const ActionItems = styled.div`
   height: 10%;
-  border: 1px red solid;
 `;
 
 const Description = styled.div`

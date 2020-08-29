@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import LeftBar from "../components/LeftBar/LeftBar";
 import Search from "../components/Search/Search";
@@ -6,53 +7,53 @@ import DetailsView from "../components/DetailsView/DetailsView";
 
 const MainContainer = styled.div`
   display: flex;
-  border: 1px red solid;
   box-sizing: border-box;
   height: 100vh;
+  width: 100%;
   align-items: center;
 `;
 
 const LeftSection = styled.div`
   flex: 1;
   height: 100%;
-  border: 1px red solid;
+  color: white;
 `;
 
 const RightSection = styled.div`
   flex: 5;
-  border: 1px red solid;
-  margin: 25px 0 25px 0;
-  border: 1px pink solid;
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 96%;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 50px;
 `;
 
 const InnerContainer = styled.div`
   display: flex;
-  border: 1px blue solid;
   flex: 1;
   height: 90%;
 `;
 
 const ListViewContainer =  styled.div`
   flex: 1;
-  border: 1px blue solid;
   display: flex;
 `;
 
 const DetailsViewContainer =  styled.div`
-  border: 3px green solid;
   flex: 3;
 `;
 
 const SearchContainer = styled.div`
-  height: 10%;
+  height: 8%;
 `;
 
 export default function Home() {
   return (
     <MainContainer>
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet" />
+      </Head>
       <LeftSection>
         <LeftBar />
       </LeftSection>
@@ -71,7 +72,9 @@ export default function Home() {
       </RightSection>
       <style jsx global>{`
         body {
+          font-family: 'Baloo Tamma 2', cursive;
           margin: 0;
+          background-color: rgb(1,119,211);
         }
       `}</style>
     </MainContainer>

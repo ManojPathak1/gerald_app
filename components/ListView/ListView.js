@@ -8,7 +8,6 @@ const ListViewContainer = styled.div`
 `;
 
 const ListContainer = styled.div`
-  border: 3px green solid;
   flex-grow: 1;
   flex-basis: 0;
   overflow: auto;
