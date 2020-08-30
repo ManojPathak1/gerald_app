@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import ListItem from '../ListItem/ListItem';
 
 const ListViewContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  margin-bottom: 20px;
 `;
 
 const ListContainer = styled.div`
@@ -20,21 +22,9 @@ function ListView() {
         <h1>Filter</h1>
       </div>
       <ListContainer>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
+        {[1,2,3,4,5,6,7,8,9,10,11,12,13].map(e => (
+          <ListItem />
+        ))}
       </ListContainer>
     </ListViewContainer>
   );

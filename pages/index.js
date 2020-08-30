@@ -36,12 +36,12 @@ const InnerContainer = styled.div`
 `;
 
 const ListViewContainer =  styled.div`
-  flex: 1;
+  flex: 2;
   display: flex;
 `;
 
 const DetailsViewContainer =  styled.div`
-  flex: 3;
+  flex: 5;
 `;
 
 const SearchContainer = styled.div`
