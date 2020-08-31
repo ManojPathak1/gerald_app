@@ -28,7 +28,7 @@ const RightSection = styled.div`
   display: flex;
   flex-direction: column;
   height: 96%;
-  margin: 0 20px;
+  margin: 20px 20px 20px 0px;
   background-color: white;
   border-radius: 50px;
 `;
@@ -90,11 +90,11 @@ export default function Home() {
             <SearchError />
           ) : (
             <ListViewContainer>
-              <ListView lists={searchResults} handleList={handleList} />
+              <ListView selected={listItem.id} lists={searchResults} handleList={handleList} />
             </ListViewContainer>
           )}
           <DetailsViewContainer>
-            {listItem ? <SelectedView listItem={listItem} /> : <DetailsView />}
+            <DetailsView listItem={listItem} />
           </DetailsViewContainer>
         </InnerContainer>
       </RightSection>

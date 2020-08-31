@@ -20,6 +20,14 @@ const SearchInput = styled.input`
   margin-left: 5px;
 `;
 
+const IconsContainer = styled.div`
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.3;
+`;
+
 function Search({ term, handleChange }) {
   return (
     <MainContainer>
@@ -34,13 +42,13 @@ function Search({ term, handleChange }) {
           value={term}
         ></SearchInput>
       </div>
-      <div>
+      <IconsContainer>
         <FaCalendarAlt />
         <FiSettings />
         <AiFillQuestionCircle />
         <GrAnnounce />
         <FaUserAlt />
-      </div>
+      </IconsContainer>
     </MainContainer>
   );
 }

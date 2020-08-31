@@ -3,17 +3,22 @@ import styled from "styled-components";
 import { BsArrow90DegLeft, BsFillSlashCircleFill } from "react-icons/bs";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaTags } from "react-icons/fa";
+import ListItem from "../ListItem/ListItem";
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   padding: 40px;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ActionItems = styled.div`
   height: 15%;
+  width: 100%;
 `;
 
 const Description = styled.div`
@@ -68,54 +73,45 @@ const UserImage = styled.div`
 `;
 
 const Actions = styled.div`
+  width: 17%;
   display: flex;
+  justify-content: space-between;
+  opacity: 0.3;
 `;
 
-function DetailsView() {
+const PleaseSelect = styled.div`
+  color: #777;
+`; 
+
+function DetailsView({ listItem }) {
   return (
     <MainContainer>
-      <ActionItems>
+      {listItem ? (<><ActionItems>
         <UserName>
-          <h3>Dan Abramov</h3>
+          <h3>{listItem.subject}</h3>
           <Actions>
-            <h3>
               <BsArrow90DegLeft />
-            </h3>
-            <h3>
               <RiDeleteBin6Fill />
-            </h3>
-            <h3>
               <BsFillSlashCircleFill />
-            </h3>
-            <h3>
               <FaTags />
-            </h3>
           </Actions>
         </UserName>
         <UserImage>
-          <img src="https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg" />
+          <img src={listItem.img} />
           <h3>View in browser</h3>
         </UserImage>
       </ActionItems>
       <Description>
         <DescriptionImage>
-          <img src="https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg" />
+          <img src={listItem.img} />
         </DescriptionImage>
         <Title>
-          <h1>Welcome to React</h1>
+          <h1>{listItem.name}</h1>
         </Title>
         <DescriptionText>
-          <span>
-            React is a JavaScript library for building user interfaces. Learn
-            what React is all about on our homepage or in the tutorial.React has
-            been designed from the start for gradual adoption, and you can use
-            as little or as much React as you need. Whether you want to get a
-            taste of React, add some interactivity to a simple HTML page, or
-            start a complex React-powered app, the links in this section will
-            help you get started.
-          </span>
+          <span>{listItem.description}</span>
         </DescriptionText>
-      </Description>
+      </Description></>) : <PleaseSelect><h1>Please select the item</h1></PleaseSelect>}
     </MainContainer>
   );
 }

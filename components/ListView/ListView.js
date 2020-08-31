@@ -8,12 +8,17 @@ const ListViewContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 `;
 
 const ListActions = styled.div`
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  h3 {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const ListContainer = styled.div`
@@ -38,6 +43,7 @@ function ListView(props) {
           <ListItem
             handleList={props.handleList}
             listItem={list}
+            selected={props.selected}
             key={list.id}
           />
         ))}

@@ -5,6 +5,8 @@ const MainContainer = styled.div`
   display: flex;
   padding: 10px;
   padding-bottom: 30px;
+  background-color: ${(props) => props.isSelected ? '#eee' : ''};
+  cursor: pointer;
 `;
 
 const UserImage = styled.div`
@@ -30,6 +32,7 @@ const Name = styled.div`
   .subject {
     font-size: 18px;
     font-weight: 900;
+    color: ${props => props.isSelected ? 'rgb(1, 119, 211)' : 'black'};
   }
 `;
 
@@ -42,14 +45,14 @@ const Time = styled.div`
   }
 `;
 
-function ListItem({ listItem, handleList }) {
+function ListItem({ listItem, handleList, selected }) {
   const truncateText = listItem.description.substring(0, 60) + "...";
   return (
-    <MainContainer key={listItem.id} onClick={() => handleList(listItem)}>
+    <MainContainer key={listItem.id} isSelected={selected === listItem.id} onClick={() => handleList(listItem)}>
       <UserImage>
         <img src={listItem.img} />
       </UserImage>
-      <Name>
+      <Name isSelected={selected === listItem.id}>
         <span className="name">{listItem.name}</span>
         <span className="subject">{listItem.subject}</span>
         <span className="name">{truncateText}</span>
