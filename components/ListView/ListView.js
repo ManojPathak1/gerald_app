@@ -1,6 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import ListItem from '../ListItem/ListItem';
+import React from "react";
+import styled from "styled-components";
+import { FaAngleDown } from "react-icons/fa";
+import { BsPlusCircleFill } from "react-icons/bs";
+import ListItem from "../ListItem/ListItem";
 
 const ListViewContainer = styled.div`
   display: flex;
@@ -9,21 +11,35 @@ const ListViewContainer = styled.div`
   margin-bottom: 20px;
 `;
 
+const ListActions = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
 const ListContainer = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   overflow: auto;
 `;
 
-function ListView() {
+function ListView(props) {
   return (
     <ListViewContainer>
-      <div>
-        <h1>Filter</h1>
-      </div>
+      <ListActions>
+        <h3>
+          Prioritaire <FaAngleDown />
+        </h3>
+        <p>
+          <BsPlusCircleFill />
+        </p>
+      </ListActions>
       <ListContainer>
-        {[1,2,3,4,5,6,7,8,9,10,11,12,13].map(e => (
-          <ListItem />
+        {props.lists.map((list) => (
+          <ListItem
+            handleList={props.handleList}
+            listItem={list}
+            key={list.id}
+          />
         ))}
       </ListContainer>
     </ListViewContainer>

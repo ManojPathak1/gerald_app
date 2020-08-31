@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const MainContainer = styled.div`
   margin-left: 30px;
@@ -23,8 +23,16 @@ function LeftBar() {
       <ListContainer>
         <span>Dossiers I</span>
         <OptionsContainer>
-          {[1, 2, 3, 4, 5, 6, 7].map(e => {
-            return <span>List {e}</span>
+          {[
+            "Boite de reception",
+            "Courrier indesirables",
+            "Brouillions",
+            "Elements envoyes",
+            "Elements supprimes",
+            "Archives",
+            "Notes",
+          ].map((e, index) => {
+            return <span key={index}>{e}</span>;
           })}
         </OptionsContainer>
       </ListContainer>

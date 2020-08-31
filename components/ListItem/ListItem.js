@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const MainContainer = styled.div`
   display: flex;
@@ -42,19 +42,20 @@ const Time = styled.div`
   }
 `;
 
-function ListItem() {
+function ListItem({ listItem, handleList }) {
+  const truncateText = listItem.description.substring(0, 60) + "...";
   return (
-    <MainContainer>
+    <MainContainer key={listItem.id} onClick={() => handleList(listItem)}>
       <UserImage>
-        <img src="https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg" />
+        <img src={listItem.img} />
       </UserImage>
       <Name>
-        <span className="name">Dan Abramov</span>
-        <span className="subject">Welcome to React and Redux</span>
-        <span className="name">React is a JavaScript library for building user interfaces. Learn what React is all about on our homepage or in the tutorial.</span>
+        <span className="name">{listItem.name}</span>
+        <span className="subject">{listItem.subject}</span>
+        <span className="name">{truncateText}</span>
       </Name>
       <Time>
-        <span>8:56</span>
+        <span>{listItem.time}</span>
       </Time>
     </MainContainer>
   );

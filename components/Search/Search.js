@@ -1,5 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { FaSistrix, FaCalendarAlt, FaUserAlt } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { AiFillQuestionCircle } from "react-icons/ai";
+import { GrAnnounce } from "react-icons/gr";
 
 const MainContainer = styled.div`
   margin: 5px 60px;
@@ -13,16 +17,30 @@ const SearchInput = styled.input`
   border: 0px;
   outline: none;
   font-size: 17px;
+  margin-left: 5px;
 `;
 
-function Search() {
+function Search({ term, handleChange }) {
   return (
     <MainContainer>
       <div>
-        <span>I</span>
-        <SearchInput value="Rechercher"></SearchInput>
+        <span>
+          <FaSistrix />
+        </span>
+        <SearchInput
+          type="text"
+          onChange={handleChange}
+          placeholder="Rechercher"
+          value={term}
+        ></SearchInput>
       </div>
-      <div>Actions</div>
+      <div>
+        <FaCalendarAlt />
+        <FiSettings />
+        <AiFillQuestionCircle />
+        <GrAnnounce />
+        <FaUserAlt />
+      </div>
     </MainContainer>
   );
 }
