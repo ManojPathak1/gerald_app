@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { BsArrow90DegLeft, BsFillSlashCircleFill } from "react-icons/bs";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaTags } from "react-icons/fa";
-import ListItem from "../ListItem/ListItem";
 
 const MainContainer = styled.div`
   display: flex;
@@ -81,37 +80,45 @@ const Actions = styled.div`
 
 const PleaseSelect = styled.div`
   color: #777;
-`; 
+`;
 
 function DetailsView({ listItem }) {
   return (
     <MainContainer>
-      {listItem ? (<><ActionItems>
-        <UserName>
-          <h3>{listItem.subject}</h3>
-          <Actions>
-              <BsArrow90DegLeft />
-              <RiDeleteBin6Fill />
-              <BsFillSlashCircleFill />
-              <FaTags />
-          </Actions>
-        </UserName>
-        <UserImage>
-          <img src={listItem.img} />
-          <h3>View in browser</h3>
-        </UserImage>
-      </ActionItems>
-      <Description>
-        <DescriptionImage>
-          <img src={listItem.img} />
-        </DescriptionImage>
-        <Title>
-          <h1>{listItem.name}</h1>
-        </Title>
-        <DescriptionText>
-          <span>{listItem.description}</span>
-        </DescriptionText>
-      </Description></>) : <PleaseSelect><h1>Please select the item</h1></PleaseSelect>}
+      {listItem ? (
+        <>
+          <ActionItems>
+            <UserName>
+              <h3>{listItem.subject}</h3>
+              <Actions>
+                <BsArrow90DegLeft />
+                <RiDeleteBin6Fill />
+                <BsFillSlashCircleFill />
+                <FaTags />
+              </Actions>
+            </UserName>
+            <UserImage>
+              <img src={listItem.img} />
+              <h3>View in browser</h3>
+            </UserImage>
+          </ActionItems>
+          <Description>
+            <DescriptionImage>
+              <img src={listItem.img} />
+            </DescriptionImage>
+            <Title>
+              <h1>{listItem.name}</h1>
+            </Title>
+            <DescriptionText>
+              <span>{listItem.description}</span>
+            </DescriptionText>
+          </Description>
+        </>
+      ) : (
+        <PleaseSelect>
+          <h1>Please select the item</h1>
+        </PleaseSelect>
+      )}
     </MainContainer>
   );
 }
