@@ -5,7 +5,6 @@ import LeftBar from "../components/LeftBar/LeftBar";
 import Search from "../components/Search/Search";
 import ListView from "../components/ListView/ListView";
 import DetailsView from "../components/DetailsView/DetailsView";
-import SelectedView from "../components/SelectedView/SelectedView";
 import SearchError from "../components/SearchError/SearchError";
 import List from "../mock.js";
 
@@ -54,7 +53,7 @@ const SearchContainer = styled.div`
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(List);
   const [listItem, setListItem] = useState("");
 
   const handleList = (item) => {
