@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import LeftBar from "../components/LeftBar/LeftBar";
 import Search from "../components/Search/Search";
 import ListView from "../components/ListView/ListView";
@@ -51,10 +51,21 @@ const SearchContainer = styled.div`
   height: 8%;
 `;
 
+const lightTheme = {
+  color: '#000',
+  background: '#fff',
+};
+
+const darkTheme = {
+  color: '#fff',
+  background: '#000',
+};
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState(List);
   const [listItem, setListItem] = useState("");
+  const [isLightTheme, setLightTheme] = useState(true);
 
   const handleList = (item) => {
     setListItem(item);
@@ -70,7 +81,8 @@ export default function Home() {
   }, [searchTerm]);
 
   return (
-    <MainContainer>
+    <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
+      <MainContainer>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap"
@@ -78,7 +90,7 @@ export default function Home() {
         />
       </Head>
       <LeftSection>
-        <LeftBar />
+        <LeftBar onChangeTheme={setLightTheme} />
       </LeftSection>
       <RightSection>
         <SearchContainer>
@@ -104,6 +116,7 @@ export default function Home() {
           background-color: rgb(1, 119, 211);
         }
       `}</style>
-    </MainContainer>
+      </MainContainer>
+    </ThemeProvider>
   );
 }

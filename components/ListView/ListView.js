@@ -25,6 +25,7 @@ const ListContainer = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   overflow: auto;
+  background: ${props => props.theme.background}
 `;
 
 function ListView(props) {

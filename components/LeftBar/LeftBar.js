@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ThemeSelector from "../ThemeSelector/ThemeSelector";
 
 const MainContainer = styled.div`
   margin-left: 30px;
@@ -27,7 +28,7 @@ const Options = styled.div`
   border-radius: 100px 0px 0px 100px;
 `;
 
-function LeftBar() {
+function LeftBar({ onChangeTheme }) {
   return (
     <MainContainer>
       <h3>Outlook</h3>
@@ -47,6 +48,7 @@ function LeftBar() {
           })}
         </OptionsContainer>
       </ListContainer>
+      <ThemeSelector onChange={onChangeTheme} />
     </MainContainer>
   );
 }

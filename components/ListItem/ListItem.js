@@ -7,6 +7,7 @@ const MainContainer = styled.div`
   padding-bottom: 30px;
   background-color: ${(props) => props.isSelected ? '#eee' : ''};
   cursor: pointer;
+  color: ${props => props.theme.color};
 `;
 
 const UserImage = styled.div`
@@ -27,12 +28,10 @@ const Name = styled.div`
   .name {
     font-size: 13px;
     font-weight: bold;
-    color: #777;
   }
   .subject {
     font-size: 18px;
     font-weight: 900;
-    color: ${props => props.isSelected ? 'rgb(1, 119, 211)' : 'black'};
   }
 `;
 
@@ -41,7 +40,6 @@ const Time = styled.div`
   span {
     font-size: 13px;
     font-weight: bold;
-    color: #777;
   }
 `;
 
